@@ -8,7 +8,7 @@ int main()
   //Enter Number of Elements
   scanf("%d", &n);
 
-  //Enter Sorted Elements
+  //Enter Elements
   for(i=0;i<n;i++)
     scanf("%d", &a[i]);
 
