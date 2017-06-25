@@ -1,10 +1,8 @@
 #include <stdio.h>
 
-void swap(int *x, int *y);
-
 int main()
 {
-  int a[20], n, i, j;
+  int a[20], n, i, j, k;
   //Enter Number of Elements
   scanf("%d", &n);
 
@@ -12,10 +10,16 @@ int main()
   for(i=0;i<n;i++)
     scanf("%d", &a[i]);
 
-  for(i=0; i<n-1; i++)
-    for(j=0; j<n-i-1; j++)
-      if(a[j] > a[j+1])
-        swap(&a[j], &a[j+1]);
+  for (i = 1; i < n; i++)
+  {
+    k = a[i];
+    j = i-1;
+    while(j>=0 && a[j]>k){
+      a[j+1] = a[j];
+      j--;
+    }
+    a[j+1] = k;
+  }
 
   printf("Sorted array:");
 
@@ -23,11 +27,4 @@ int main()
     printf(" %d", a[i]);
 
   return 0;
-}
-
-void swap(int *x, int *y)
-{
-  int t = *x;
-  *x = *y;
-  *y = t;
 }
