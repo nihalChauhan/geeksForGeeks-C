@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 
 void countSort(int a[], int n, int e);
 void radixSort(int a[], int n);
@@ -34,16 +33,16 @@ void countSort(int a[], int n, int e){
   for(i=1; i<10; ++i)
     count[i] += count[i-1];
 
-  for(i=0; a[i]; i++){
-    output[count[ (a[i]/e)%10 ]-1] = a[i];
-    --count[(a[i]/e)%10];
+  for(i=n-1; i>=0; i--){
+    output[ count[(a[i]/e)%10] - 1 ] = a[i];
+    --count[ (a[i]/e)%10 ];
   }
 
-  for(i=0; a[i]; i++)
+  for(i=0; i<n; i++)
     a[i] = output[i];
 }
 
-void radixSort(int a[], int n, int e){
+void radixSort(int a[], int n){
   int m = getMax(a, n);
 
   for(int e=1; m/e > 0; e*=10)
