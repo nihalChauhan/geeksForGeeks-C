@@ -56,7 +56,7 @@ void minSubArray(int a[], int n)
     }
   }
 
-  printf("Sub Araay To sort : ");
+  printf("Sub Array To sort : ");
   for(i=beg; i<=end; i++)
     printf(" %d", a[i]);
 }
