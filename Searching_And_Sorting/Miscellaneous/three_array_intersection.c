@@ -18,7 +18,7 @@ int main()
   for(i=0;i<m;i++)
     scanf("%d", &b[i]);
 
-  //Enter Number of Elements for second array
+  //Enter Number of Elements for third array
   scanf("%d", &o);
 
   //Enter Elements
