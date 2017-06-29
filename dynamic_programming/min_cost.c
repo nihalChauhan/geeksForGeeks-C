@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int minCost(int cost[10][10], int n, int m)
+int minCost(int cost[10][10], int n, int m);
 int min(int x, int y, int z);
 
 int main()
