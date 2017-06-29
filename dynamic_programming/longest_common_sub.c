@@ -1,5 +1,5 @@
-/* Dynamic Programming C/C++ implementation of LCS problem */
-#include<bits/stdc++.h>
+#include <stdio.h>
+#include <string.h>
 
 int max(int a, int b);
 int lcs( char *X, char *Y, int m, int n );
@@ -38,5 +38,5 @@ int lcs( char *X, char *Y, int m, int n ){
 }
 
 int max(int a, int b){
-return (a > b)? a : b;
+  return (a > b)? a : b;
 }
