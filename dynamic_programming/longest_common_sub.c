@@ -7,8 +7,8 @@ int lcs( char *X, char *Y, int m, int n );
 int main()
 {
   char X[20], Y[20];
-  scanf("%s\n", X);
-  scanf("%s\n", Y);
+  scanf("%s", X);
+  scanf("%s", Y);
 
   int m = strlen(X);
   int n = strlen(Y);
