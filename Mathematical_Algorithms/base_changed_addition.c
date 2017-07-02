@@ -22,6 +22,7 @@ void add(char x[], char y[], char result[], int b){
   int n = strlen(x);
   int temp, i, c;
   c=0;
+  result[n+1] = '\0';
   for(i=n-1; i>=0; i--){
     temp = get_value(x[i], b) + get_value(y[i], b) + c;
     if(temp>=b){
@@ -33,7 +34,7 @@ void add(char x[], char y[], char result[], int b){
   if(c)
     result[0] = '1';
   else
-    result++;
+    result[0] = ' ';
 }
 
 
