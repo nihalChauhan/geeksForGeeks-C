@@ -54,6 +54,12 @@ int main(){
 
     print_b(d, i);
 
+    printf(" ");
+    print_r(d, i);
+
+    printf(" ");
+    print_o(d, i);
+
     printf("\n");
   }
   return 0;
@@ -181,8 +187,28 @@ void print_b(int n, int i){
 
 void print_r(int n, int i){
   printf("*");
+  static int k = 1;
+  int c=1;
+  for(int j=1; j<n; j++){
+    if(i==0 || i==((n-1)/2) || (i<n/2 && j==n-1)){
+      printf("*");
+      continue;
+    }
+    else if(i>(n-1)/2){
+      if(j==k && c){
+        printf("*");
+        k=k+2; c=0;
+        continue;
+      }
+    }
+    printf(" ");
+  }
+}
+
+void print_o(int n, int i){
+  printf("*");
   for(int j=1; j<n-1; j++){
-    if(i==0 || i==n-1 || i==n/2)
+    if(i==0 || i==n-1)
       printf("*");
     else
       printf(" ");
