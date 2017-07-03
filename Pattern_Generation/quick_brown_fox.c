@@ -35,6 +35,12 @@ int main(){
     printf(" ");
     print_i(d, i);
 
+    printf(" ");
+    print_c(d, i);
+
+    printf(" ");
+    print_k(d, i);
+
     printf("\n");
   }
   return 0;
@@ -119,4 +125,32 @@ void print_i(int n, int i){
         printf(" ");
     }
   }
+}
+
+void print_c(int n, int i){
+  printf("*");
+  for(int j=1; j<n; j++){
+    if(i==0 || i==n-1)
+      printf("*");
+    else
+      printf(" ");
+  }
+}
+
+void print_k(int n, int i){
+  printf("*");
+  static int k = 1;
+  int c = 1;
+
+  for(int j=1; j<n+1; j++){
+    if(j==(n-k) && c==1){
+      printf("*");
+      c = 0;
+    }
+    else
+      printf(" ");
+  }
+  if(i<n/2) k+=2;
+  else k-=2;
+  if(i==n/2-1 && n%2==0)k-=2;
 }
