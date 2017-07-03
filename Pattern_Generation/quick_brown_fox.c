@@ -16,6 +16,9 @@ void print_o(int n, int i);
 void print_w(int n, int i);
 void print_n(int n, int i);
 
+void print_f(int n, int i);
+void print_x(int n, int i);
+
 
 int main(){
   int d;
@@ -59,6 +62,24 @@ int main(){
 
     printf(" ");
     print_o(d, i);
+
+    printf(" ");
+    print_w(d, i);
+
+    printf(" ");
+    print_n(d, i);
+
+    printf("\n");
+  }
+  printf("\n");
+  for(int i=0; i<d; i++){
+    print_f(d, i);
+
+    printf(" ");
+    print_o(d, i);
+
+    printf(" ");
+    print_x(d, i);
 
     printf("\n");
   }
@@ -214,4 +235,61 @@ void print_o(int n, int i){
       printf(" ");
   }
   printf("*");
+}
+
+void print_w(int n, int i){
+  printf("*");
+  int k = 2*((n+1)/2);
+  static int x = 0;
+  int c = 2;
+  for(int j=1; j<=k; j++){
+    if(i>=k/2-1 && (j==k/2+1+x || j==k/2-x) && c>0){
+      printf("*");
+      c--;
+      if(c==0)
+      x++;
+    }
+    else
+      printf(" ");
+    }
+  printf("*");
+}
+
+void print_n(int n, int i){
+  printf("*");
+  static int x = 0;
+  int c = 1;
+  for(int j=0; j<n; j++){
+    if(j==x && c){
+      printf("*");
+      c--; x++;
+    }
+    else
+      printf(" ");
+    }
+  printf("*");
+}
+
+void print_f(int n, int i){
+  printf("*");
+  for(int j=1; j < n; j++){
+    if(i==0)
+      printf("*");
+    else if(i==n/2){
+      if(j<n/2+1)
+      printf("*");
+      else
+      printf(" ");
+    }
+    else printf(" ");
+  }
+}
+
+void print_x(int n, int i){
+  for(int j=0; j<=n; j++){
+    if(j==i||(n-j==i))
+      printf("*");
+    else
+    printf(" ");
+  }
 }
