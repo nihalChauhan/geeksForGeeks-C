@@ -10,6 +10,12 @@ void print_i(int n, int i);
 void print_c(int n, int i);
 void print_k(int n, int i);
 
+void print_b(int n, int i);
+void print_r(int n, int i);
+void print_o(int n, int i);
+void print_w(int n, int i);
+void print_n(int n, int i);
+
 
 int main(){
   int d;
@@ -26,6 +32,7 @@ int main(){
 
     printf(" ");
     printf(" ");
+    printf(" ");
 
     print_q(d, i);
 
@@ -40,6 +47,12 @@ int main(){
 
     printf(" ");
     print_k(d, i);
+
+    printf(" ");
+    printf(" ");
+    printf(" ");
+
+    print_b(d, i);
 
     printf("\n");
   }
@@ -153,4 +166,26 @@ void print_k(int n, int i){
   if(i<n/2) k+=2;
   else k-=2;
   if(i==n/2-1 && n%2==0)k-=2;
+}
+
+void print_b(int n, int i){
+  printf("*");
+  for(int j=1; j<n-1; j++){
+    if(i==0 || i==n-1 || i==n/2)
+      printf("*");
+    else
+      printf(" ");
+  }
+  printf("*");
+}
+
+void print_r(int n, int i){
+  printf("*");
+  for(int j=1; j<n-1; j++){
+    if(i==0 || i==n-1 || i==n/2)
+      printf("*");
+    else
+      printf(" ");
+  }
+  printf("*");
 }
