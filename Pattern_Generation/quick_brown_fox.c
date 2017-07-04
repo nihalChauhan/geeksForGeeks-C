@@ -31,6 +31,9 @@ void print_a(int n, int i);
 void print_z(int n, int i);
 void print_y(int n, int i);
 
+void print_d(int n, int i);
+void print_g(int n, int i);
+
 int main(){
   int d;
   scanf("%d",&d);
@@ -145,6 +148,24 @@ int main(){
 
     printf(" ");
     print_a(d, i);
+
+    printf(" ");
+    print_z(d, i);
+
+    printf(" ");
+    print_y(d, i);
+
+    printf(" ");
+    printf(" ");
+    printf(" ");
+
+    print_d(d, i);
+
+    printf(" ");
+    print_o(d, i);
+
+    printf(" ");
+    print_g(d, i);
 
     printf("\n");
   }
@@ -451,5 +472,70 @@ void print_a(int n, int i){
     else if((i>=n/2 && (j==1 || j==k)) || (i==n/2))
       printf("*");
     else printf(" ");
+  }
+}
+
+void print_z(int n, int i){
+  static int k = 0;
+  int j, c=1;
+  for(j=0; j<n; j++){
+    if(i==0 || i==n-1)
+      printf("*");
+    else if(j==n-k-2 && c){
+      printf("*");
+      k++; c--;
+    }
+    else printf(" ");
+  }
+}
+
+void print_y(int n, int i){
+  int k = 2*((n+1)/2);
+  static int x = 0;
+  int c = 2;
+  for(int j=0; j<k; j++){
+    if(i<n/2 && (j==x+1 || j==k-x-1) && c>0){
+      printf("*");
+      c--;
+      if(c==0)
+      x++;
+    }
+    else if(i>=n/2 && j==k/2)
+      printf("*");
+    else printf(" ");
+  }
+}
+
+void print_d(int n, int i){
+  printf("*");
+  static int k = 0;
+  int c=1;
+  for(int j=1; j<n; j++){
+    if(j<n/2 && (i==0 || i==n-1))
+      printf("*");
+    else if(i<n/2 && j==n/2+k && c){
+      printf("*");
+      k++; c--;
+    }
+    else if(i==n/2 && j==n-1){
+      printf("*");
+      if(n%2==0)k--;
+    }
+    else if(i>n/2 && j==n/2+k-1 && c){
+      printf("*");
+      k--; c--;
+    }
+    else
+      printf(" ");
+  }
+}
+
+void print_g(int n, int i){
+  printf("*");
+  for(int j=1; j<n; j++){
+    if(i==0 || i==n-1 || (i>n/2 && j==n-1) || (i==n/2 && j>=n/2))
+      printf("*");
+    else
+      printf(" ");
   }
 }
