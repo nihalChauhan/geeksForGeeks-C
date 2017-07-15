@@ -18,21 +18,13 @@ int main(){
 int abs(int a){ return a<0? a*-1 : a; }
 
 int min_max_h(int a[], int n, int k){
-  int i, min, max, sum;
+  int i, min, max;
   min = max = 0;
-  sum = a[0];
   for(i=1; i<n; i++){
     if(a[i]<a[min]) min = i;
     if(a[i]>a[max]) max = i;
-    sum+=a[i];
   }
-  if(sum < k*n){
-    for(i=0; i<n; i++)
-      a[i] += k;
-    if(a[max]-a[min] >= k)
-      a[max]-=2*k;
-    return a[max]-a[min];
-  }
+
   int mx = a[max];
   int mn = a[min];
   max = min = 0;
