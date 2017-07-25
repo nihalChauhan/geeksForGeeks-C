@@ -11,7 +11,7 @@ int main(){
   return 0;
 }
 
-int find_max_k(int a[20], int n, int k){
+int find_max(int a[20], int n){
   int i;
   int max, sum=0;
   sum = max = a[0];
