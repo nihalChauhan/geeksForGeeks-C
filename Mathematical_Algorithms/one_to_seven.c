@@ -12,7 +12,7 @@ int main(){
 int foo(){
   time_t t;
   srand((unsigned)time(&t));
-  return rand() % 7;
+  return rand() % 5;
 }
 
 int my_rand(){
